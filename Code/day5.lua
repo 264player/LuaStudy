@@ -1,0 +1,64 @@
+-- --创建表
+-- table = {}
+-- k = "a"
+-- table[k] = 10
+-- print(table["a"])
+--lua使用表储存全局变量
+-- a = {}
+-- a.x = 10
+-- print(a.x)
+-- print(a["x"])
+-- print(a.y)
+-- x = { a = 0, b = 1 }
+-- -- print(x[])
+-- x[1] = "element"
+-- print(x[1] .. x["a"])
+-- {a=0,b=1} == {["a"]=0,["b"]=1}
+-- t = { 10, print, x = 12, k = "hi" }
+-- for k, v in pairs(t) do
+--     print(k, v)
+-- end
+-- t = { "a", "b", "c" }
+-- for index, value in ipairs(t) do
+--     print(index, value)
+-- end
+-- ?是安全访问操作符，当属性不存在，就返回nil
+-- a = { 1, 2, 3 }
+-- b = {}
+-- table.move(a, 1, #a, 1, b)
+-- print(#b)
+-----------------------------------------------
+-- a = {}
+-- a.a = a 循环添加{}于{}中
+-- print(a.a.a.a == nil) false
+-- a = {}
+-- a.a = a
+-- a.a.a.a = 3
+-- print(a.a)
+-- print(a.a.a)
+-- print(a.a.a.a)
+-- print(a.a.a.a.a) 地址相同
+-----------------------------------------------
+-- function Largtable()
+--     a = {}
+--     for i = 1, 1000000 do
+--         a[i] = "1"
+--     end
+--     return a
+-- end
+
+-- function Myconcat(list)
+--     str = ""
+--     for index, value in ipairs(list) do
+--         str = str .. value
+--     end
+--     -- return str
+-- end
+
+-- start = os.time()
+-- print(table.concat(Largtable()))
+-- print(os.time() - start)
+-- start = os.time()
+-- print(Myconcat(Largtable()))
+-- print(os.time() - start)
+--简单利用lua链接字符串实现的效率低了一百多倍
